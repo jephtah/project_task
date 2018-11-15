@@ -5,7 +5,7 @@ import Header from './Header';
 import Options from './Options';
 import OptionModal from './OptionModal';
 
-export default class IndecisionApp extends Component {
+export default class Choicer extends Component {
   //Using class properties instead of this.state
   state = {
     options: [], 
@@ -79,14 +79,17 @@ export default class IndecisionApp extends Component {
             hasOptions={this.state.options.length > 0}
             handlePick={this.handlePick}
           />
-          <Options
-            options={this.state.options}
-            handleDeleteOptions={this.handleDeleteOptions}
-            handleDeleteOption={this.handleDeleteOption}
-          />
-          <AddOption
-            handleAddOption={this.handleAddOption}
-          />
+
+          <div className = "widget">
+            <Options
+              options={this.state.options}
+              handleDeleteOptions={this.handleDeleteOptions}
+              handleDeleteOption={this.handleDeleteOption}
+            />
+            <AddOption
+              handleAddOption={this.handleAddOption}
+            />
+          </div>
         </div>
 
         <OptionModal 
